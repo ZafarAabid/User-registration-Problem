@@ -60,14 +60,14 @@ fi
 
 function getPassword(){
 read -p "choose Password :" password
-passwordPattern="[0-9a-zA-Z]{8,}$"
+#passwordPattern="$"
 
 
-if [[ $password =~ $passwordPattern ]]
+if [[ ${#password} -ge 8 && "$password" == *[[:upper:]]* ]]
 then
-        echo "valid Number"
+        echo "valid password"
 else
-        echo "Invalid Number"
+        echo "Invalid password"
 fi
 }
 
