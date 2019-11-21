@@ -4,8 +4,8 @@ echo "-----UserRegistration-----"
 echo "-----Greeting-----"
 
 function getFirstName(){
-read -p "Enter First name :" fname
 
+read -p "Enter First name :" fname
 fnamePattern="^[A-Z][a-zA-Z]{2,}$"
 
 if [[ $fname =~ $fnamePattern ]]
@@ -18,8 +18,8 @@ fi
 }
 
 function getLastName(){
-read -p "Enter Last name :" lname
 
+read -p "Enter Last name :" lname
 lnamePattern="^[A-Z][a-zA-Z]{2,}$"
 
 if [[ $lname =~ $lnamePattern ]]
@@ -44,13 +44,11 @@ else
 fi
 }
 
+
 function getMobileNumber(){
-
 read -p "Enter Mobile number :" number
-
 numberPattern="^[0-9]{2,3}[[:space:]][0-9]{10}$"
 #numberPattern="^[0]?[0-9]{10}$"
-
 
 if [[ $number =~ $numberPattern ]]
 then
@@ -60,8 +58,21 @@ else
 fi
 }
 
+function getPassword(){
+read -p "choose Password :" password
+passwordPattern="[0-9a-zA-Z]{8,}$"
+
+
+if [[ $password =~ $passwordPattern ]]
+then
+        echo "valid Number"
+else
+        echo "Invalid Number"
+fi
+}
 
 #getFirstName
 #getLastName
 #getEmail
-getMobileNumber
+#getMobileNumber
+getPassword
