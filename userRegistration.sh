@@ -3,7 +3,7 @@
 echo "-----UserRegistration-----"
 echo "-----Greeting-----"
 
-function firstName(){
+function getFirstName(){
 read -p "Enter First name :" fname
 
 fnamePattern="^[A-Z][a-zA-Z]{2,}$"
@@ -17,7 +17,7 @@ fi
 
 }
 
-function lastName(){
+function getLastName(){
 read -p "Enter Last name :" lname
 
 lnamePattern="^[A-Z][a-zA-Z]{2,}$"
@@ -31,6 +31,19 @@ fi
 
 }
 
+function getEmail(){
+
+read -p "Enter Email address :" email
+email="^[0-9a-zA-Z]+[._+-]{0,1}[0-9a-zA-Z]+[@][0-9a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-z]{2}){0,1}$"
+
+if [[ $email =~ $emailPattern ]]
+then
+        echo "valid email"
+else
+        echo "Invalid email"
+fi
+}
 
 #firstName
-lastName
+#lastName
+getEmail
