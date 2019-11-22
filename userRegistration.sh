@@ -60,19 +60,23 @@ fi
 
 function getPassword(){
 read -p "choose Password :" password
-#passwordPattern="$"
 
-
-if [[ ${#password} -ge 8 && "$password" == *[[:upper:]]* ]]
+if [[ ${#password} -ge 8  && "$password" == *[[:upper:]]* && "$password" == *[[:lower:]]* && "$password" == *[0-9]* && "$password" == *[@-#_+$]* ]]
 then
         echo "valid password"
 else
         echo "Invalid password"
 fi
+
 }
 
-#getFirstName
-#getLastName
-#getEmail
-#getMobileNumber
+
+while [ true ]
+do
+getFirstName
+getLastName
+getEmail
+getMobileNumber
 getPassword
+
+done
